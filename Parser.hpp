@@ -12,6 +12,6 @@ public:
 
 private:
 
-	static bool is_date_delimiter(const char ch);
+	static bool is_date_delimiter(const char ch) noexcept;
 	virtual ~Parser() = 0;
 };

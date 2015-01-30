@@ -8,7 +8,7 @@ private:
 
 public:
 	CommandLineArgs(const int argc, char const * argv[]);
-	~CommandLineArgs();
+	~CommandLineArgs() = default;
 
 	std::string get_date() const;
 };

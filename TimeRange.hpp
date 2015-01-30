@@ -1,4 +1,5 @@
 #pragma once
+#include "ctime"
 
 class TimeRange
 {
@@ -11,6 +12,6 @@ class TimeRange
 		TimeRange(TimeRange && other) noexcept;
 		TimeRange & operator=(const TimeRange & other) noexcept;
 		TimeRange & operator=(TimeRange && other) noexcept;
-		~TimeRange();
+		~TimeRange() = default;
 		bool is_in_range(std::time_t time_entry) const;
 };
