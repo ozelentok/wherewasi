@@ -39,7 +39,9 @@ int main(int argc, char const* argv[])
 			time_range_file.read(time_range, current_description_line);
 		}
 	} catch (const Exception & e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
+	} catch (...) {
+		std::cerr << "Unknown Exception" << std::endl;
 	}
 	return 0;
 }
