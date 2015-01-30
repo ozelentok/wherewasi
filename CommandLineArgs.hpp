@@ -5,7 +5,6 @@ class CommandLineArgs {
 
 private:
 	std::string _date;
-	CommandLineArgs(const CommandLineArgs & other);
 
 public:
 	CommandLineArgs(const int argc, char const * argv[]);

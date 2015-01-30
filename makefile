@@ -15,4 +15,4 @@ wherewasi: $(OBJS)
 .PHONY: clean
 
 clean:
-	rm $(OBJS) wherewasi
+	rm -f $(OBJS) wherewasi

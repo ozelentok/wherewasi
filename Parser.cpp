@@ -1,8 +1,9 @@
 #include <stdexcept>
-#include <ctime>
 #include <string>
 #include <iostream>
+#include <ctime>
 #include "Parser.hpp"
+#include "TimeRange.hpp"
 
 using std::time_t;
 using std::string;
@@ -34,7 +35,7 @@ time_t Parser::parse_time(const string & s)
 	return epoch_time;
 }
 
-TIME_RANGE Parser::parse_time_range(const string & s)
+TimeRange Parser::parse_time_range(const string & s)
 {
 	size_t space_index = s.find(' ');
 	if (space_index == string::npos) {
@@ -44,10 +45,9 @@ TIME_RANGE Parser::parse_time_range(const string & s)
 		throw std::invalid_argument("Time range could not be parsed out of bounds");
 	}
 
-	TIME_RANGE time_range = {0};
-	time_range.start = parse_time(s);
-	time_range.end = parse_time(s.substr(space_index + 1));
-	return time_range;
+	time_t start = parse_time(s);
+	time_t end = parse_time(s.substr(space_index + 1));
+	return TimeRange(start, end);
 }
 
 unsigned int Parser::parse_digit(const char digit_char)
