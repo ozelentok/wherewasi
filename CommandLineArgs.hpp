@@ -10,5 +10,5 @@ public:
 	CommandLineArgs(const int argc, char const * argv[]);
 	~CommandLineArgs();
 
-	std::string get_date();
+	std::string get_date() const;
 };

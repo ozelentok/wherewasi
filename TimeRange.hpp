@@ -12,5 +12,5 @@ class TimeRange
 		TimeRange & operator=(const TimeRange & other) noexcept;
 		TimeRange & operator=(TimeRange && other) noexcept;
 		~TimeRange();
-		bool is_in_range(std::time_t time_entry);
+		bool is_in_range(std::time_t time_entry) const;
 };
