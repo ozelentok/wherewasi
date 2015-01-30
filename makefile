@@ -1,12 +1,12 @@
 SOURCES = $(wildcard *.cpp)
 OBJS = $(SOURCES:.cpp=.o)
 CC = g++
-CFLAGS = -Wall -Werror -std=c++11 -O2 -g
+CFLAGS = -Wall -Werror -std=c++11 -O2
 
 all: wherewasi 
 
 wherewasi: $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
+	$(CC) -o $@ $(OBJS)
 	strip $@
 
 .cpp.o:
