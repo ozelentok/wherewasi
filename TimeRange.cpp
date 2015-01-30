@@ -37,7 +37,7 @@ TimeRange & TimeRange::operator=(TimeRange && other) noexcept
 TimeRange::~TimeRange()
 {};
 
-bool TimeRange::is_in_range(std::time_t time_entry)
+bool TimeRange::is_in_range(std::time_t time_entry) const
 {
 	return (time_entry >= _start && time_entry <= _end);
 }

@@ -15,7 +15,7 @@ CommandLineArgs::CommandLineArgs(const int argc, char const * argv[])
 CommandLineArgs::~CommandLineArgs()
 {}
 
-std::string CommandLineArgs::get_date()
+std::string CommandLineArgs::get_date() const
 {
 	return _date;
 }
