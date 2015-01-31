@@ -12,4 +12,5 @@ public:
 	~TimeRangeFile() = default;
 	void read(TimeRange & time_range, std::string & description);
 	bool eof() const;
+	static std::string get_default_path();
 };

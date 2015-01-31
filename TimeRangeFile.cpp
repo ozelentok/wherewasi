@@ -2,7 +2,6 @@
 #include "TimeRange.hpp"
 #include "Parser.hpp"
 #include "Exception.hpp"
-#include <iostream>
 
 TimeRangeFile::TimeRangeFile(const std::string & file_path)
 {
@@ -30,7 +29,7 @@ void TimeRangeFile::read(TimeRange & time_range, std::string & description)
 	if (_file_stream.eof()) {
 		throw IOException("Malformed time range file");
 	}
-	
+
 	try {
 		time_range = Parser::parse_time_range(range_line);
 	}
@@ -42,4 +41,15 @@ void TimeRangeFile::read(TimeRange & time_range, std::string & description)
 bool TimeRangeFile::eof() const
 {
 	return _file_stream.eof();
+}
+
+std::string TimeRangeFile::get_default_path()
+{
+	static const std::string file_name = ".wherewasi";
+	char * home_path = getenv("HOME");
+	if (home_path == NULL)
+	{
+		throw EnvironmentException("Home directory not found");
+	}
+	return (std::string(home_path) + "/" + file_name);
 }
