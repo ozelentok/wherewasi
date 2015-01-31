@@ -11,7 +11,9 @@ CommandLineArgs::CommandLineArgs(const int argc, char const * argv[])
 				"Usage: wherewasi [TIME]\n"
 				"Time can be in the following formats:\n"
 				"  [YYYY-MM-DD]\n"
-				"  [YYYY/MM/DD]\n");
+				"  [YYYY/MM/DD]\n"
+				"\n"
+				"Time ranges are read from $HOME/.wherewasi\n");
 	}
 	_date = std::string(argv[_arg_date_index]);
 }
