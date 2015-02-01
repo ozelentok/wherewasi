@@ -3,6 +3,7 @@
 #include <utility>
 #include "TimeRange.hpp"
 #include <cassert>
+#include "Utils.hpp"
 
 TimeRange::TimeRange(std::time_t start, std::time_t end,
 		const std::string & description)
@@ -47,6 +48,7 @@ std::string TimeRange::to_string() const
 	tm * start_tm = localtime(&_start);
 	tm * end_tm = localtime(&_end);
 	int format_result = 0;
+	_UNUSED(format_result);
 
 	format_result = strftime(
 			start_buffer, sizeof(start_buffer),
