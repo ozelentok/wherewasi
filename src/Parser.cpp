@@ -43,19 +43,21 @@ time_t Parser::parse_time(const string & s)
 	return epoch_time;
 }
 
-TimeRange Parser::parse_time_range(const string & s)
+TimeRange Parser::parse_time_range(
+		const string & times_line,
+		const string & description)
 {
-	size_t space_index = s.find(' ');
+	size_t space_index = times_line.find(' ');
 	if (space_index == string::npos) {
 		throw ParseException("Malformed time range");
 	}
-	if (space_index + 1 > s.length()) {
+	if (space_index + 1 > times_line.length()) {
 		throw ParseException("Malformed time range");
 	}
 
-	time_t start = parse_time(s);
-	time_t end = parse_time(s.substr(space_index + 1));
-	return TimeRange(start, end);
+	time_t start = parse_time(times_line);
+	time_t end = parse_time(times_line.substr(space_index + 1));
+	return TimeRange(start, end, description);
 }
 
 unsigned int Parser::parse_digit(const char digit_char)

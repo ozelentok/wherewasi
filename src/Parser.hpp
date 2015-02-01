@@ -6,7 +6,9 @@ class Parser {
 public:
 
 	static time_t parse_time(const std::string & s);
-	static TimeRange parse_time_range(const std::string & s);
+	static TimeRange parse_time_range(
+		const std::string & times_line,
+		const std::string & description);
 	static unsigned int parse_digit(const char ch);
 	static int parse_tm_int(const std::string & s, unsigned int & pos);
 

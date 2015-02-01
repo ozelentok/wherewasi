@@ -11,9 +11,10 @@ TimeRangeFile::TimeRangeFile(const std::string & file_path)
 	}
 }
 
-void TimeRangeFile::read(TimeRange & time_range, std::string & description)
+void TimeRangeFile::read(TimeRange & time_ranges)
 {
 	std::string range_line;
+	std::string description;
 	std::getline(_file_stream, range_line);
 	if (_file_stream.bad()) {
 		throw IOException("Failed reading time range file");
@@ -31,7 +32,7 @@ void TimeRangeFile::read(TimeRange & time_range, std::string & description)
 	}
 
 	try {
-		time_range = Parser::parse_time_range(range_line);
+		time_ranges = Parser::parse_time_range(range_line, description);
 	}
 	catch (const ParseException & e) {
 		throw IOException("Malformed time range file");

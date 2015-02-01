@@ -18,14 +18,13 @@ int main(int argc, char const * argv[])
 		CommandLineArgs args(argc, argv);
 		time_t target_date = Parser::parse_time(args.get_date());
 		TimeRangeFile time_range_file(TimeRangeFile::get_default_path());
-		TimeRange time_range(0, 0);
-		string current_description_line;
-		time_range_file.read(time_range, current_description_line);
+		TimeRange time_range(0, 0, "");
+		time_range_file.read(time_range);
 		while (!time_range_file.eof()) {
 			if (time_range.is_in_range(target_date)) {
-				std::cout << current_description_line << std::endl;
+				std::cout << time_range.to_string() << std::endl;
 			}
-			time_range_file.read(time_range, current_description_line);
+			time_range_file.read(time_range);
 		}
 	} catch (const Exception & e) {
 		std::cerr << e.what() << std::endl;
