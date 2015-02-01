@@ -29,9 +29,9 @@ Fill it with your own time periods in the following format:
 Example:
 
 ```
-2012-01-01 2013-02-02
+2012-01-01 2012-12-31
 First Year of University
-2013-01-01 2014-02-02
+2013-01-01 2013-12-31
 Second Year of University
 ```
 
@@ -48,4 +48,10 @@ Your can enter the date in the following formats:
 ```
 [YYYY-MM-DD]
 [YYYY/MM/DD]
+```
+
+Example:
+```
+wherewasi 2012-04-23
+<2012-01-01> First Year of University <2012-12-31>
 ```

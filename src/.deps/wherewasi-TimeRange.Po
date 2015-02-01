@@ -139,7 +139,7 @@ wherewasi-TimeRange.o: TimeRange.cpp /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/adxintrin.h \
  /usr/include/c++/4.9.2/bits/random.tcc /usr/include/c++/4.9.2/numeric \
  /usr/include/c++/4.9.2/bits/stl_numeric.h TimeRange.hpp \
- /usr/include/c++/4.9.2/cassert /usr/include/assert.h
+ /usr/include/c++/4.9.2/cassert /usr/include/assert.h Utils.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -508,3 +508,5 @@ TimeRange.hpp:
 /usr/include/c++/4.9.2/cassert:
 
 /usr/include/assert.h:
+
+Utils.hpp:

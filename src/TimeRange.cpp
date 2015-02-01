@@ -41,28 +41,27 @@ TimeRange & TimeRange::operator=(TimeRange && other) noexcept
 
 std::string TimeRange::to_string() const
 {
-	const int TIME_BUFFER_SIZE = 512;
+	const int TIME_BUFFER_SIZE = 32;
 	const char * TIME_FORMAT = "<%F>";
 	char start_buffer[TIME_BUFFER_SIZE] = {0};
 	char end_buffer[TIME_BUFFER_SIZE] = {0};
-	tm * start_tm = localtime(&_start);
-	tm * end_tm = localtime(&_end);
+	tm start_tm = *localtime(&_start);
+	tm end_tm = *localtime(&_end);
 	int format_result = 0;
 	_UNUSED(format_result);
 
 	format_result = strftime(
 			start_buffer, sizeof(start_buffer),
-			TIME_FORMAT, start_tm);
+			TIME_FORMAT, &start_tm);
 	assert(format_result != 0);
 
 	format_result = strftime(
 			end_buffer, sizeof(end_buffer),
-			TIME_FORMAT, end_tm);
+			TIME_FORMAT, &end_tm);
 	assert(format_result != 0);
 
 	return std::string(start_buffer) + " " +
-		_description + " " +
-		std::string(end_buffer);
+		_description + " " + end_buffer;
 }
 
 bool TimeRange::is_in_range(std::time_t time_entry) const noexcept
