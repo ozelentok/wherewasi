@@ -1,22 +1,24 @@
-#WhereWasI
+# WhereWasI
 
 Command-line program to help you find out in what period of your life a certain date takes place.
 
-##How to Install?
+## How to Install?
 
 ```
-./configure CXXFLAGS=-DNDEBUG
-make
 make install
 ```
 
-##How to Uninstall?
+## How to Uninstall?
 
 ```
 make uninstall
 ```
 
-##How to Use?
+## Requirements
+
+GNU C++ Compiler with C++11 support
+
+## How to Use?
 
 Create a file in your home directory called ".wherewasi"  
 Fill it with your own time periods in the following format:
@@ -37,7 +39,7 @@ Second Year of University
 
 *Supports multiple and overlapping periods*
 
-##How to Run?
+## How to Run?
 
 ```
 wherewasi [Date]
