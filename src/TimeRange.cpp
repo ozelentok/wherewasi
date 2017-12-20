@@ -1,8 +1,8 @@
 #include <ctime>
 #include <algorithm>
 #include <utility>
-#include "TimeRange.hpp"
 #include <cassert>
+#include "TimeRange.hpp"
 #include "Utils.hpp"
 
 TimeRange::TimeRange(std::time_t start, std::time_t end,

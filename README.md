@@ -2,13 +2,14 @@
 
 Command-line program to help you find out in what period of your life a certain date takes place.
 
-## How to Install?
+## Installation
 
 ```
+make
 make install
 ```
 
-## How to Uninstall?
+## Uninstall
 
 ```
 make uninstall
